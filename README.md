@@ -38,6 +38,9 @@ ADD/EDIT!! DO NOT PASTE FULLY!
 android {
     defaultConfig {
         ...
+        // =============================
+        // Only arm64-v8a ABI (if you have other, change it using docs (https://bit.ly/flutterabifilters)
+        // =============================
         ndk {
             biFilters.add("arm64-v8a")
         }
@@ -54,3 +57,12 @@ android {
 ...
 }
 ```
+
+# Now run the code
+```flutter
+flutter build apk --release --no-shrink
+```
+this will build apk file, which is way faster and better than ```flutter run```, after build it will be in folder build and something i dont really remember xd
+and then, type in the terminal ```adb install path/to/yourapkfile.apk``` and follow the instructions on your phone (make sure installing apps via usb and usb debugging is on)
+
+THANKS! YOUR FLUTTER PROJECT IS NOW RUNNING GOOD ON OLDER HARDWARE!
