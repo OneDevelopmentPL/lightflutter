@@ -1,7 +1,7 @@
-# Light Flutter
+# Light Flutter (for devices with 8GB RAM)
 Flutter conifguration for older devices to run smoothly
 
-# Edit ```gradle.properties``` file in your flutter project
+## 1.  Edit ```gradle.properties``` file in your flutter project
 Then, add/replace with this:
 ```gradle.propeties
 # ===============================
@@ -30,4 +30,27 @@ org.gradle.caching=true
 # ===============================
 org.gradle.debug=true
 ```
-now its okay
+
+## 2. Edit ```build.gradle.kts``` in ```android/app/build.gradle.kts```
+ADD/EDIT!! DO NOT PASTE FULLY!
+```build.gradle.kts
+...
+android {
+    defaultConfig {
+        ...
+        ndk {
+            biFilters.add("arm64-v8a")
+        }
+    }
+    buildTypes {
+        release {
+            ...
+            signingConfig = signingConfigs.getByName("debug")
+        }
+        debug {
+           ...
+        }
+    }
+...
+}
+```
