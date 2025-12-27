@@ -1,5 +1,5 @@
 # Light Flutter (for devices with 8GB RAM)
-Flutter conifguration for older devices to run smoothly
+Flutter conifguration for older hardware to run smoothly
 
 ## 1.  Edit ```gradle.properties``` file in your flutter project
 Then, add/replace with this:
